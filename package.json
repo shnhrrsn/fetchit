@@ -1,0 +1,25 @@
+{
+  "name": "fetchit",
+  "version": "1.0.0",
+  "description": "Extra utilities for `fetch` that works in both Node and the browser.",
+  "main": "node.js",
+  "browser": "browser.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shnhrrsn/fetchit.git"
+  },
+  "author": "Shaun Harrison (@shnhrrsn)",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "eslint": "^4.9.0",
+    "eslint-config-grind": "^2.0.1"
+  },
+  "optionalDependencies": {
+    "node-fetch": "^1.7.3"
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "test": "ava --verbose"
+  }
+}

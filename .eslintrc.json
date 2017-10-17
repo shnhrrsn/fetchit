@@ -1,0 +1,15 @@
+{
+	"env": {
+		"node": true
+	},
+	"extends": "grind",
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"rules": {
+		"prefer-rest-params": false
+	},
+	"globals": {
+		"window": true
+	}
+}
