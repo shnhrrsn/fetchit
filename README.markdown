@@ -9,6 +9,20 @@
 
 `fetchit` provides additional utilities for [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) that works in both Node and the browser.
 
+## Installation
+
+### yarn
+
+```bash
+yarn add fetchit
+```
+
+### npm
+
+```bash
+npm install --save fetchit
+```
+
 ## Documentation
 
 By default, `fetchit` works identically to [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) with the exception that it will throw a [StatusCodeError](src/StatusCodeError.js) for non-200 responses.
