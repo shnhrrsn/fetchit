@@ -11,6 +11,7 @@
   "author": "Shaun Harrison (@shnhrrsn)",
   "license": "MIT",
   "devDependencies": {
+    "@ungap/url-search-params": "^0.1.1",
     "ava": "^0.22.0",
     "eslint": "^4.9.0",
     "eslint-config-grind": "^2.0.1"
