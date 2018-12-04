@@ -5,7 +5,11 @@ function StatusCodeError(status, message) {
 	instance.code = status
 
 	Object.setPrototypeOf(instance, Object.getPrototypeOf(this))
-	Error.captureStackTrace(instance, StatusCodeError)
+
+	if(typeof Error.captureStackTrace === 'function') {
+		Error.captureStackTrace(instance, StatusCodeError)
+	}
+
 	return instance
 }
 
