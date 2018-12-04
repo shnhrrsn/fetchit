@@ -28,7 +28,7 @@ StatusCodeError.prototype = Object.create(Error.prototype, {
 	}
 })
 
-if (Object.setPrototypeOf){
+if(Object.setPrototypeOf) {
 	Object.setPrototypeOf(StatusCodeError, Error)
 } else {
 	StatusCodeError.__proto__ = Error

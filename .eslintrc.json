@@ -7,7 +7,9 @@
 		"sourceType": "module"
 	},
 	"rules": {
-		"prefer-rest-params": false
+		"prefer-rest-params": 0,
+		"prefer-template": 0,
+		"prefer-arrow-callback": 0
 	},
 	"globals": {
 		"window": true
