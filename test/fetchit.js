@@ -102,6 +102,44 @@ test('error 400', async t => {
 	}
 })
 
+test('error 400 json', async t => {
+	try {
+		await fetch.json('http://mockbin.org/status/400/BAD+REQUEST')
+	} catch(err) {
+		t.is(err.message, '400')
+		t.is(err.status, 400)
+		t.is(err.statusCode, 400)
+		t.is(err.code, 400)
+		t.is(typeof err.response, 'object')
+		t.is(err.name, 'StatusCodeError')
+
+		t.is(typeof err.json, 'object')
+		t.deepEqual(err.json, {
+			code: '400',
+			message: 'BAD REQUEST'
+		})
+	}
+})
+
+test('error 400 text', async t => {
+	try {
+		await fetch.text('http://mockbin.org/status/400/BAD+REQUEST')
+	} catch(err) {
+		t.is(err.message, '400')
+		t.is(err.status, 400)
+		t.is(err.statusCode, 400)
+		t.is(err.code, 400)
+		t.is(typeof err.response, 'object')
+		t.is(err.name, 'StatusCodeError')
+
+		t.is(typeof err.text, 'string')
+		t.is(err.text, JSON.stringify({
+			code: '400',
+			message: 'BAD REQUEST'
+		}, null, 2))
+	}
+})
+
 test('error 500', async t => {
 	try {
 		await fetch('https://httpbin.org/status/500')
