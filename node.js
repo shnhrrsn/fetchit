@@ -1,4 +1,4 @@
-const fetchit = require('./src/fetchit.js')
+const fetchit = require('./src/fetchit-async.js')
 fetchit.fetch = require('node-fetch')
 fetchit.qs = require('querystring')
 
