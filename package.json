@@ -1,6 +1,6 @@
 {
   "name": "fetchit",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Extra utilities for `fetch` that works in both Node and the browser.",
   "main": "node.js",
   "browser": "browser.js",
