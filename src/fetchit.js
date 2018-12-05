@@ -7,7 +7,7 @@ function fetchit(uri, options) {
 
 		return fetchit.fetch(uri, options).then(function(response) {
 			if(!response.ok) {
-				const error = new StatusCodeError(response.status)
+				const error = new StatusCodeError(response.status, response.statusText || response.status || 'Fetch Error')
 				error.response = response
 				throw error
 			}

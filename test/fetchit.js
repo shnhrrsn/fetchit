@@ -101,7 +101,7 @@ for(const variant of [ 'fetchit', 'fetchit-async' ]) {
 		try {
 			await fetch('https://httpbin.org/status/400')
 		} catch(err) {
-			t.is(err.message, '400')
+			t.is(err.message, 'BAD REQUEST')
 			t.is(err.status, 400)
 			t.is(err.statusCode, 400)
 			t.is(err.code, 400)
@@ -114,7 +114,7 @@ for(const variant of [ 'fetchit', 'fetchit-async' ]) {
 		try {
 			await fetch.json('http://mockbin.org/status/400/BAD+REQUEST')
 		} catch(err) {
-			t.is(err.message, '400')
+			t.is(err.message, 'BAD REQUEST')
 			t.is(err.status, 400)
 			t.is(err.statusCode, 400)
 			t.is(err.code, 400)
@@ -133,7 +133,7 @@ for(const variant of [ 'fetchit', 'fetchit-async' ]) {
 		try {
 			await fetch.text('http://mockbin.org/status/400/BAD+REQUEST')
 		} catch(err) {
-			t.is(err.message, '400')
+			t.is(err.message, 'BAD REQUEST')
 			t.is(err.status, 400)
 			t.is(err.statusCode, 400)
 			t.is(err.code, 400)
@@ -152,7 +152,7 @@ for(const variant of [ 'fetchit', 'fetchit-async' ]) {
 		try {
 			await fetch('https://httpbin.org/status/500')
 		} catch(err) {
-			t.is(err.message, '500')
+			t.is(err.message, 'INTERNAL SERVER ERROR')
 			t.is(err.status, 500)
 			t.is(err.statusCode, 500)
 			t.is(err.code, 500)
