@@ -105,6 +105,7 @@ for(const variant of [ 'fetchit', 'fetchit-async' ]) {
 			t.is(err.status, 400)
 			t.is(err.statusCode, 400)
 			t.is(err.code, 400)
+			t.is(err.uri, 'https://httpbin.org/status/400')
 			t.is(typeof err.response, 'object')
 			t.is(err.name, 'StatusCodeError')
 		}

@@ -4,17 +4,22 @@ const build = require('./build.js')
 async function fetchit(uri, options) {
 	[ uri, options ] = build(fetchit.qs, uri, options)
 
-	const response = await fetchit.fetch(uri, options)
+	try {
+		const response = await fetchit.fetch(uri, options)
 
-	if(!response.ok) {
-		const error = new StatusCodeError(response.status, response.statusText || response.status || 'Fetch Error')
-		error.response = response
+		if(!response.ok) {
+			const error = new StatusCodeError(response.status, response.statusText || response.status || 'Fetch Error')
+			error.response = response
+			throw error
+		}
+
+		return response
+	} catch(error) {
+		error.uri = uri
+		error.options = options
 		throw error
 	}
-
-	return response
 }
-
 
 fetchit.json = async function() {
 	try {

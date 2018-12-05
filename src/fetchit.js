@@ -13,8 +13,14 @@ function fetchit(uri, options) {
 			}
 
 			return response
+		}).catch(function(err) {
+			err.uri = uri
+			err.options = options
+			throw err
 		})
 	} catch(err) {
+		err.uri = uri
+		err.options = options
 		return Promise.reject(err)
 	}
 }
