@@ -1,29 +1,42 @@
 {
   "name": "fetchit",
   "version": "2.1.0",
-  "description": "Extra utilities for `fetch` that works in both Node and the browser.",
-  "main": "node.js",
-  "browser": "browser.js",
+  "description": "Extra utilities for `fetch` that work in both Node and the browser.",
   "repository": {
     "type": "git",
     "url": "https://github.com/shnhrrsn/fetchit.git"
   },
-  "author": "Shaun Harrison (@shnhrrsn)",
   "license": "MIT",
+  "author": "Shaun Harrison (@shnhrrsn)",
+  "main": "lib/node.js",
+  "browser": "lib/browser.js",
+  "scripts": {
+    "build": "rm -fr lib && tsc",
+    "commit": "git-cz",
+    "prepack": "yarn build",
+    "test": "ts-node node_modules/ava/cli.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
+    "@types/node": "^14.6.0",
+    "@types/node-fetch": "^2.5.7",
     "@ungap/url-search-params": "^0.1.1",
-    "ava": "^1.0.0-rc.2",
-    "eslint": "^5.9.0",
-    "eslint-config-grind": "^2.1.5"
+    "ava": "^3.11.1",
+    "cz-conventional-changelog": "^3.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "prettier-plugin-packagejson": "^2.2.5",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
   },
   "optionalDependencies": {
     "node-fetch": "*"
-  },
-  "scripts": {
-    "lint": "eslint src",
-    "test": "ava --verbose"
-  },
-  "ava": {
-    "babel": false
   }
 }

@@ -1,6 +1,6 @@
-const test = require('ava')
-const qs = require('../src/browser/qs')
-const querystring = require('querystring')
+import { qs } from '../src/browser/qs'
+import querystring from 'querystring'
+import test from 'ava'
 
 const query = {
 	date: Date.now().toString(),
@@ -9,15 +9,15 @@ const query = {
 	one: 1,
 	zero: 0,
 	string: 'string',
-	array: [ 'a', 'b', 'c' ]
+	array: ['a', 'b', 'c'],
 }
 
-test('with URLSearchParams', async t => {
+test('with URLSearchParams', async (t: any) => {
 	global.URLSearchParams = require('@ungap/url-search-params')
 	t.is(querystring.stringify(query), qs.stringify(query))
 })
 
-test('without URLSearchParams', async t => {
-	global.URLSearchParams = undefined
+test('without URLSearchParams', async (t: any) => {
+	delete global.URLSearchParams
 	t.is(querystring.stringify(query), qs.stringify(query))
 })

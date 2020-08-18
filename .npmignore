@@ -1,8 +1,5 @@
-.DS_Store
-node_modules/
-test/
-yarn.lock
-.gitignore
-.travis.yml
-.eslintrc.json
-*.tgz
+*
+!lib/**/*
+!package.json
+!README.markdown
+!LICENSE
