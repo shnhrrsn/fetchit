@@ -14,12 +14,17 @@
     "build": "rm -fr lib && tsc",
     "commit": "git-cz",
     "prepack": "yarn build",
+    "release": "standard-version",
+    "release:beta": "standard-version --prerelease beta",
     "test": "ts-node node_modules/ava/cli.js"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "standard-version": "^9.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
