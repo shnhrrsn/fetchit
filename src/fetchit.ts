@@ -2,6 +2,8 @@ import { build } from './shared/build'
 import { StatusCodeError } from './shared/StatusCodeError'
 import { getFetch, getQueryString } from './modules'
 import { FetchIt, FetchitRequestInit } from './types/fetchit'
+import text from './shared/text'
+import json from './shared/json'
 
 export const fetchit = <FetchIt>(
 	function fetchit(uri: string, options?: FetchitRequestInit): Promise<Response> {
@@ -38,41 +40,9 @@ export const fetchit = <FetchIt>(
 )
 
 fetchit.json = function (...args) {
-	return fetchit(...args)
-		.catch(function (error) {
-			if (error.name !== 'StatusCodeError' || !error.response) {
-				return Promise.reject(error)
-			}
-
-			try {
-				return error.response.json().then((json: any) => {
-					error.json = json
-					return Promise.reject(error)
-				})
-			} catch (err2) {
-				return Promise.reject(error)
-			}
-		})
-		.then(response => response.json())
+	return json(fetchit(...args))
 }
 
 fetchit.text = function (...args) {
-	return fetchit(...args)
-		.catch(function (err) {
-			if (err.name !== 'StatusCodeError' || !err.response) {
-				return Promise.reject(err)
-			}
-
-			try {
-				return err.response.text().then((text: any) => {
-					err.text = text
-					return Promise.reject(err)
-				})
-			} catch (err2) {
-				return Promise.reject(err)
-			}
-		})
-		.then(function (response) {
-			return response.text()
-		})
+	return text(fetchit(...args))
 }

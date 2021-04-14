@@ -34,8 +34,8 @@ In addition to the standard `fetch` API, `fetchit` adds a few extra utilities:
 `fetchit.json()` accepts the same arguments as `fetch`, but rather than the full response object, it will return a JSON object:
 
 ```js
-const fetch = require('fetchit')
-console.log('result', await fetch.json('https://httpbin.org/anything'))
+import fetchit from 'fetchit'
+console.log('result', await fetchit.json('https://httpbin.org/anything'))
 ```
 
 ### fetchit.text
@@ -43,8 +43,19 @@ console.log('result', await fetch.json('https://httpbin.org/anything'))
 `fetchit.text()` accepts the same arguments as `fetch`, but rather than the full response object, it will return the response body as a string:
 
 ```js
-const fetch = require('fetchit')
-console.log('result', await fetch.text('https://httpbin.org/robots.txt'))
+import fetchit from 'fetchit'
+console.log('result', await fetchit.text('https://httpbin.org/robots.txt'))
+```
+
+### Functional Access
+
+In addition to `fetchit.json()` and `fetchit.text()`, you can access them in a functional way as well:
+
+```js
+import fetchit, { json, text } from 'fetchit'
+
+console.log('result', await json(fetchit('https://httpbin.org/anything'))
+console.log('result', await text(fetchit('https://httpbin.org/robots.txt'))
 ```
 
 ### options
