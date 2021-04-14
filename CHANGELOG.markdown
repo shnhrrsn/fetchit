@@ -1,3 +1,13 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+# [3.0.0-beta.2](https://github.com/shnhrrsn/fetchit/compare/2.1.0...v3.0.0-beta.2) (2021-04-14)
+
+### ✨ Features
+
+- add functional access for json/text ([61f921b](https://github.com/shnhrrsn/fetchit/commit/61f921bb2c73208542731abab1d4d63f769ac2ba))
+
 # [3.0.0-beta.1](https://github.com/shnhrrsn/fetchit/compare/2.1.0...3.0.0-beta.1) (2020-08-18)
 
 ### 🧪 Refactors

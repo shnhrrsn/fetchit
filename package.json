@@ -1,6 +1,6 @@
 {
   "name": "fetchit",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.2",
   "description": "Extra utilities for `fetch` that work in both Node and the browser.",
   "repository": {
     "type": "git",
