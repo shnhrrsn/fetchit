@@ -1,7 +1,6 @@
-import { setFetch, setQueryString } from './modules'
-
-import { fetchit } from './fetchit'
 import { qs } from './browser/qs'
+import { fetchit } from './fetchit'
+import { setFetch, setQueryString } from './modules'
 
 setFetch(window.fetch.bind(window))
 setQueryString(qs)

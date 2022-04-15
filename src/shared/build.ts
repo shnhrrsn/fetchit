@@ -1,5 +1,5 @@
-import { QueryString } from '../types/querystring'
 import { FetchitRequestInit } from '../types/fetchit'
+import { QueryString } from '../types/querystring'
 
 export function build(
 	qs: QueryString,

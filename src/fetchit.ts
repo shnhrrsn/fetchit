@@ -1,9 +1,9 @@
-import { build } from './shared/build'
-import { StatusCodeError } from './shared/StatusCodeError'
 import { getFetch, getQueryString } from './modules'
-import { FetchIt, FetchitRequestInit } from './types/fetchit'
-import text from './shared/text'
+import { build } from './shared/build'
 import json from './shared/json'
+import { StatusCodeError } from './shared/StatusCodeError'
+import text from './shared/text'
+import { FetchIt, FetchitRequestInit } from './types/fetchit'
 
 export const fetchit = <FetchIt>(
 	function fetchit(uri: string, options?: FetchitRequestInit): Promise<Response> {

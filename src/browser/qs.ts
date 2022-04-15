@@ -1,5 +1,5 @@
-import { QueryString } from '../types/querystring'
 import { ParsedUrlQueryInput } from 'querystring'
+import { QueryString } from '../types/querystring'
 
 function stringifyWithURLSearchParams(object: ParsedUrlQueryInput) {
 	const params = new URLSearchParams()

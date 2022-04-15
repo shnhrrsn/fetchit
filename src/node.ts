@@ -1,8 +1,7 @@
-import { setFetch, setQueryString } from './modules'
-
 import fetch from 'node-fetch'
-import { fetchit } from './fetchit'
 import qs from 'querystring'
+import { fetchit } from './fetchit'
+import { setFetch, setQueryString } from './modules'
 
 setFetch(<any>fetch)
 setQueryString(qs)
