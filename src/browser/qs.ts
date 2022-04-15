@@ -25,32 +25,10 @@ function stringifyWithURLSearchParams(object: ParsedUrlQueryInput) {
 	return params.toString()
 }
 
-function stringifyFallback(object: ParsedUrlQueryInput) {
-	const queryString = []
-
-	for (const key in object) {
-		const value = object[key]
-
-		if (Array.isArray(value)) {
-			for (const v of value) {
-				queryString.push(encodeURIComponent(key) + '=' + encodeURIComponent(v))
-			}
-		} else {
-			queryString.push(encodeURIComponent(key) + '=' + encodeURIComponent(<any>value))
-		}
-	}
-
-	return queryString.join('&')
-}
-
 export const qs: QueryString = {
 	stringify(object: ParsedUrlQueryInput): string {
 		if (!object) {
 			return ''
-		}
-
-		if (typeof URLSearchParams === 'undefined') {
-			return stringifyFallback(object)
 		}
 
 		return stringifyWithURLSearchParams(object)
