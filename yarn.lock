@@ -349,7 +349,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node-fetch2@npm:@types/node-fetch@^2.6.1, @types/node-fetch@npm:^2.6.1":
+"@types/node-fetch1@npm:@types/node-fetch@^2.6.1, @types/node-fetch2@npm:@types/node-fetch@^2.6.1, @types/node-fetch3@npm:@types/node-fetch@^2.6.1, @types/node-fetch@npm:^2.6.1":
   version: 2.6.1
   resolution: "@types/node-fetch@npm:2.6.1"
   dependencies:
@@ -1630,6 +1630,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"data-uri-to-buffer@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "data-uri-to-buffer@npm:4.0.0"
+  checksum: a010653869abe8bb51259432894ac62c52bf79ad761d418d94396f48c346f2ae739c46b254e8bb5987bded8a653d467db1968db3a69bab1d33aa5567baa5cfc7
+  languageName: node
+  linkType: hard
+
 "date-time@npm:^3.1.0":
   version: 3.1.0
   resolution: "date-time@npm:3.1.0"
@@ -1847,7 +1854,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"encoding@npm:^0.1.13":
+"encoding@npm:^0.1.11, encoding@npm:^0.1.13":
   version: 0.1.13
   resolution: "encoding@npm:0.1.13"
   dependencies:
@@ -2071,6 +2078,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fetch-blob@npm:^3.1.2, fetch-blob@npm:^3.1.4":
+  version: 3.1.5
+  resolution: "fetch-blob@npm:3.1.5"
+  dependencies:
+    node-domexception: ^1.0.0
+    web-streams-polyfill: ^3.0.3
+  checksum: 6493f21bfe196798343431d20c0284835202728d076dd2cbf502a2846679f9265f3b0c3a7224750ae1a770b925da09e592b05fe7c3a22ca27794a39a0039ab21
+  languageName: node
+  linkType: hard
+
 "fetchit@workspace:.":
   version: 0.0.0-use.local
   resolution: "fetchit@workspace:."
@@ -2079,7 +2096,9 @@ __metadata:
     "@commitlint/config-conventional": ^16.2.1
     "@types/node": ^17.0.24
     "@types/node-fetch": ^2.6.1
+    "@types/node-fetch1": "npm:@types/node-fetch@^2.6.1"
     "@types/node-fetch2": "npm:@types/node-fetch@^2.6.1"
+    "@types/node-fetch3": "npm:@types/node-fetch@^2.6.1"
     "@ungap/url-search-params": ^0.2.2
     ava: ^4.2.0
     cz-conventional-changelog: ^3.3.0
@@ -2088,7 +2107,9 @@ __metadata:
     husky: ^7.0.4
     lint-staged: ^12.3.8
     node-fetch: "*"
+    node-fetch1: "npm:node-fetch@1.*"
     node-fetch2: "npm:node-fetch@2.*"
+    node-fetch3: "npm:node-fetch@3.*"
     prettier: ^2.6.2
     prettier-plugin-organize-imports: ^2.3.4
     prettier-plugin-packagejson: ^2.2.17
@@ -2251,6 +2272,15 @@ __metadata:
     combined-stream: ^1.0.8
     mime-types: ^2.1.12
   checksum: b019e8d35c8afc14a2bd8a7a92fa4f525a4726b6d5a9740e8d2623c30e308fbb58dc8469f90415a856698933c8479b01646a9dff33c87cc4e76d72aedbbf860d
+  languageName: node
+  linkType: hard
+
+"formdata-polyfill@npm:^4.0.10":
+  version: 4.0.10
+  resolution: "formdata-polyfill@npm:4.0.10"
+  dependencies:
+    fetch-blob: ^3.1.2
+  checksum: 82a34df292afadd82b43d4a740ce387bc08541e0a534358425193017bf9fb3567875dc5f69564984b1da979979b70703aa73dee715a17b6c229752ae736dd9db
   languageName: node
   linkType: hard
 
@@ -3130,6 +3160,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-stream@npm:^1.0.1":
+  version: 1.1.0
+  resolution: "is-stream@npm:1.1.0"
+  checksum: 063c6bec9d5647aa6d42108d4c59723d2bd4ae42135a2d4db6eadbd49b7ea05b750fd69d279e5c7c45cf9da753ad2c00d8978be354d65aa9f6bb434969c6a2ae
+  languageName: node
+  linkType: hard
+
 "is-stream@npm:^2.0.0":
   version: 2.0.0
   resolution: "is-stream@npm:2.0.0"
@@ -3941,6 +3978,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-domexception@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "node-domexception@npm:1.0.0"
+  checksum: ee1d37dd2a4eb26a8a92cd6b64dfc29caec72bff5e1ed9aba80c294f57a31ba4895a60fd48347cf17dd6e766da0ae87d75657dfd1f384ebfa60462c2283f5c7f
+  languageName: node
+  linkType: hard
+
+"node-fetch1@npm:node-fetch@1.*":
+  version: 1.7.3
+  resolution: "node-fetch@npm:1.7.3"
+  dependencies:
+    encoding: ^0.1.11
+    is-stream: ^1.0.1
+  checksum: 3bb0528c05d541316ebe52770d71ee25a6dce334df4231fd55df41a644143e07f068637488c18a5b0c43f05041dbd3346752f9e19b50df50569a802484544d5b
+  languageName: node
+  linkType: hard
+
 "node-fetch2@npm:node-fetch@2.*":
   version: 2.6.7
   resolution: "node-fetch@npm:2.6.7"
@@ -3955,10 +4009,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:*":
-  version: 2.6.1
-  resolution: "node-fetch@npm:2.6.1"
-  checksum: 91075bedd57879117e310fbcc36983ad5d699e522edb1ebcdc4ee5294c982843982652925c3532729fdc86b2d64a8a827797a745f332040d91823c8752ee4d7c
+"node-fetch3@npm:node-fetch@3.*, node-fetch@npm:*":
+  version: 3.2.3
+  resolution: "node-fetch@npm:3.2.3"
+  dependencies:
+    data-uri-to-buffer: ^4.0.0
+    fetch-blob: ^3.1.4
+    formdata-polyfill: ^4.0.10
+  checksum: 6f702b2683d6e1c097e99888bedaac4625d6895f2a8a60573a2bc04916f5577ea61d274f26e308c08cfb724b23d45de7d3514c14b59e0293e9809c66c88ac12c
   languageName: node
   linkType: hard
 
@@ -5912,6 +5970,13 @@ __metadata:
     spdx-correct: ^3.0.0
     spdx-expression-parse: ^3.0.0
   checksum: 35703ac889d419cf2aceef63daeadbe4e77227c39ab6287eeb6c1b36a746b364f50ba22e88591f5d017bc54685d8137bc2d328d0a896e4d3fd22093c0f32a9ad
+  languageName: node
+  linkType: hard
+
+"web-streams-polyfill@npm:^3.0.3":
+  version: 3.2.1
+  resolution: "web-streams-polyfill@npm:3.2.1"
+  checksum: b119c78574b6d65935e35098c2afdcd752b84268e18746606af149e3c424e15621b6f1ff0b42b2676dc012fc4f0d313f964b41a4b5031e525faa03997457da02
   languageName: node
   linkType: hard
 
