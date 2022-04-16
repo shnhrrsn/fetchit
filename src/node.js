@@ -1,11 +1,11 @@
-import fetch from 'node-fetch'
 import qs from 'querystring'
 import { fetchit } from './fetchit.js'
 import { setFetch, setQueryString } from './modules.js'
 
-setFetch(/** @type {*} */ (fetch))
-setQueryString(qs)
+setFetch(import('node-fetch').then(fetch => /** @type {*} */ (fetch.default ?? fetch)))
+setQueryString(Promise.resolve(qs))
 
-export { default as json } from './shared/json.js'
-export { default as text } from './shared/text.js'
+export * from './shared/json.cjs'
+export * from './shared/text.cjs'
+export { fetchit }
 export default fetchit

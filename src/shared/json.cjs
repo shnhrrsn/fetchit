@@ -2,7 +2,7 @@
  * @param {Promise<Response>} response
  * @returns {Promise<any>}
  */
-export default function json(response) {
+function json(response) {
 	return response
 		.catch(error => {
 			if (error.name !== 'StatusCodeError' || !error.response) {
@@ -22,3 +22,5 @@ export default function json(response) {
 		})
 		.then(response => response.json())
 }
+
+exports.json = json

@@ -1,10 +1,10 @@
 const storage = {
-	fetch: /** @type {import('./types/fetch').fetchfunc | undefined} */ (undefined),
-	qs: /** @type {import('./types/querystring').QueryString | undefined} */ (undefined),
+	fetch: /** @type {Promise<import('./types/fetch').fetchfunc> | undefined} */ (undefined),
+	qs: /** @type {Promise<import('./types/querystring').QueryString> | undefined} */ (undefined),
 }
 
 /**
- * @returns {import('./types/fetch').fetchfunc}
+ * @returns {Promise<import('./types/fetch').fetchfunc>}
  */
 export function getFetch() {
 	if (!storage.fetch) {
@@ -15,14 +15,14 @@ export function getFetch() {
 }
 
 /**
- * @param {import('./types/fetch').fetchfunc} fetch
+ * @param {Promise<import('./types/fetch').fetchfunc>} fetch
  */
 export function setFetch(fetch) {
 	storage.fetch = fetch
 }
 
 /**
- * @returns {import('./types/querystring').QueryString}
+ * @returns {Promise<import('./types/querystring').QueryString>}
  */
 export function getQueryString() {
 	if (!storage.qs) {
@@ -33,7 +33,7 @@ export function getQueryString() {
 }
 
 /**
- * @param {import('./types/querystring').QueryString} qs
+ * @param {Promise<import('./types/querystring').QueryString>} qs
  */
 export function setQueryString(qs) {
 	storage.qs = qs

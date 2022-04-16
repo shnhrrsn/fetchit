@@ -1,5 +1,4 @@
 .DS_Store
-*.tsbuildinfo.json
 node_modules/
 .yarn/*
 !.yarn/patches

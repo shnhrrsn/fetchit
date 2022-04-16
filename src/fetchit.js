@@ -1,14 +1,13 @@
 import { getFetch, getQueryString } from './modules.js'
 import { build } from './shared/build.js'
-import json from './shared/json.js'
+import { json } from './shared/json.cjs'
 import { StatusCodeError } from './shared/StatusCodeError.js'
-import text from './shared/text.js'
+import { text } from './shared/text.cjs'
 
 /** @type {import('./types/fetchit').FetchIt} */
-export const fetchit = function fetchit(uri, options = undefined) {
+export const fetchit = async function fetchit(uri, options = undefined) {
 	try {
-		const fetch = getFetch()
-		const qs = getQueryString()
+		const [fetch, qs] = await Promise.all([getFetch(), getQueryString()])
 		options = options ?? {}
 		;[uri, options] = build(qs, uri, options)
 

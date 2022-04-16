@@ -8,7 +8,6 @@ export class StatusCodeError extends Error {
 	/** @type {Response | undefined} */ response
 
 	/**
-	 *
 	 * @param {number} status
 	 * @param {string | undefined} message
 	 */

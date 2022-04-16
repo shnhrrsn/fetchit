@@ -1,6 +1,5 @@
 export class StatusCodeError extends Error {
     /**
-     *
      * @param {number} status
      * @param {string | undefined} message
      */

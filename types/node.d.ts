@@ -1,4 +1,5 @@
-export { default as json } from "./shared/json.js";
-export { default as text } from "./shared/text.js";
+export * from "./shared/json";
+export * from "./shared/text";
+export { fetchit };
 export default fetchit;
-import { fetchit } from "./fetchit.js";
+import { fetchit } from "./fetchit";

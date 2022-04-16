@@ -1,5 +1,5 @@
 /**
- * @param {import('querystring').ParsedUrlQueryInput} object
+ * @param {import('../types/querystring').QueryStringInput} object
  * @returns
  */
 function stringifyWithURLSearchParams(object) {
@@ -29,7 +29,7 @@ function stringifyWithURLSearchParams(object) {
 /** @type {import('../types/querystring').QueryString} */
 export const qs = {
 	/**
-	 * @param {import('querystring').ParsedUrlQueryInput} object
+	 * @param {import('../types/querystring').QueryStringInput} object
 	 * @returns {string}
 	 */
 	stringify(object) {

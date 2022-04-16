@@ -2,9 +2,10 @@ import { qs } from './browser/qs.js'
 import { fetchit } from './fetchit.js'
 import { setFetch, setQueryString } from './modules.js'
 
-setFetch(window.fetch.bind(window))
-setQueryString(qs)
+setFetch(Promise.resolve(window.fetch.bind(window)))
+setQueryString(Promise.resolve(qs))
 
-export { default as json } from './shared/json.js'
-export { default as text } from './shared/text.js'
+export * from './shared/json.cjs'
+export * from './shared/text.cjs'
+export { fetchit }
 export default fetchit

@@ -1,8 +1,8 @@
-import { ParsedUrlQueryInput } from 'querystring'
+import { QueryStringInput } from './querystring'
 
 export interface FetchitRequestInit extends RequestInit {
-	query?: ParsedUrlQueryInput | null
-	form?: ParsedUrlQueryInput | null
+	query?: QueryStringInput | null
+	form?: QueryStringInput | null
 	body?: any
 }
 

@@ -2,7 +2,7 @@
  * @param {Promise<Response>} response
  * @returns {Promise<string>}
  */
-export default function text(response) {
+function text(response) {
 	return response
 		.catch(err => {
 			if (err.name !== 'StatusCodeError' || !err.response) {
@@ -24,3 +24,5 @@ export default function text(response) {
 			return response.text()
 		})
 }
+
+exports.text = text

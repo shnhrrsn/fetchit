@@ -3,7 +3,5 @@
 
 yarn lint-staged
 
-rm -fr types
-yarn tsc -p jsconfig.json --noEmit false --declaration --emitDeclarationOnly --outDir types
-cp -R ./src/types ./types/types
+node ./scripts/gen-types.js
 git add types

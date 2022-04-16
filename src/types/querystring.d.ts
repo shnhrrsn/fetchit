@@ -1,5 +1,14 @@
-import { ParsedUrlQueryInput } from 'querystring'
+export type QueryStringInput = Record<
+	string,
+	| string
+	| number
+	| boolean
+	| ReadonlyArray<string>
+	| ReadonlyArray<number>
+	| ReadonlyArray<boolean>
+	| null
+>
 
 export interface QueryString {
-	stringify(obj?: ParsedUrlQueryInput): string
+	stringify(obj?: QueryStringInput): string
 }
