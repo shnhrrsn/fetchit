@@ -8,7 +8,7 @@ import { text } from './shared/text.cjs'
 export const fetchit = async function fetchit(uri, options = undefined) {
 	try {
 		const [fetch, qs] = await Promise.all([getFetch(), getQueryString()])
-		options = options ?? {}
+		options = options || {}
 		;[uri, options] = build(qs, uri, options)
 
 		return fetch(uri, options)

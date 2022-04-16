@@ -3,7 +3,7 @@ const { text } = require('../shared/text.cjs')
 const qs = require('querystring')
 
 const $fetchit = import('../modules.js').then(modules => {
-	modules.setFetch(import('node-fetch').then(fetch => /** @type {*} */ (fetch.default ?? fetch)))
+	modules.setFetch(import('node-fetch').then(fetch => /** @type {*} */ (fetch.default || fetch)))
 	modules.setQueryString(Promise.resolve(qs))
 	return import('../fetchit.js')
 })
