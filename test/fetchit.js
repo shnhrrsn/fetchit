@@ -1,19 +1,19 @@
-import fetchit from '../src/node'
 import test from 'ava'
+import fetchit from '../src/node.js'
 
-test('fetchit json', async (t: any) => {
+test('fetchit json', async t => {
 	const result = await fetchit.json('https://httpbin.org/anything')
 	t.is(typeof result, 'object')
 	t.is(result.method, 'GET')
 })
 
-test('fetchit text', async (t: any) => {
+test('fetchit text', async t => {
 	const result = await fetchit.text('https://httpbin.org/robots.txt')
 	t.is(typeof result, 'string')
 	t.is(result.indexOf('User-agent'), 0)
 })
 
-test('fetchit query', async (t: any) => {
+test('fetchit query', async t => {
 	const query = {
 		date: Date.now().toString(),
 		boolean: 'true',
@@ -24,7 +24,7 @@ test('fetchit query', async (t: any) => {
 	t.deepEqual(result.args, query)
 })
 
-test('fetchit post json', async (t: any) => {
+test('fetchit post json', async t => {
 	const body = {
 		date: Date.now(),
 		boolean: true,
@@ -39,7 +39,7 @@ test('fetchit post json', async (t: any) => {
 	t.deepEqual(result.json, body)
 })
 
-test('fetchit post json content type override', async (t: any) => {
+test('fetchit post json content type override', async t => {
 	const body = {
 		date: Date.now(),
 		boolean: true,
@@ -60,7 +60,7 @@ test('fetchit post json content type override', async (t: any) => {
 	t.is(bodyString, '[object Object]')
 })
 
-test('fetchit post form', async (t: any) => {
+test('fetchit post form', async t => {
 	const form = {
 		date: Date.now().toString(),
 		boolean: 'true',
@@ -75,7 +75,7 @@ test('fetchit post form', async (t: any) => {
 	t.deepEqual(result.form, form)
 })
 
-test('fetchit post text', async (t: any) => {
+test('fetchit post text', async t => {
 	const body = 'Time time is ${Date.now()}'
 
 	const result = await fetchit.json('https://httpbin.org/post', {
@@ -89,7 +89,7 @@ test('fetchit post text', async (t: any) => {
 	t.deepEqual(result.data, body)
 })
 
-test('fetchit error 400', async (t: any) => {
+test('fetchit error 400', async t => {
 	try {
 		await fetchit('https://httpbin.org/status/400')
 	} catch (err) {
@@ -103,11 +103,11 @@ test('fetchit error 400', async (t: any) => {
 	}
 })
 
-test('fetchit error 400 json', async (t: any) => {
+test('fetchit error 400 json', async t => {
 	try {
 		await fetchit.json('http://mockbin.org/status/400/BAD+REQUEST')
 	} catch (err) {
-		t.is(err.message, 'BAD REQUEST')
+		t.is(err.message, 'Bad Request')
 		t.is(err.status, 400)
 		t.is(err.statusCode, 400)
 		t.is(err.code, 400)
@@ -122,11 +122,11 @@ test('fetchit error 400 json', async (t: any) => {
 	}
 })
 
-test('fetchit error 400 text', async (t: any) => {
+test('fetchit error 400 text', async t => {
 	try {
 		await fetchit.text('http://mockbin.org/status/400/BAD+REQUEST')
 	} catch (err) {
-		t.is(err.message, 'BAD REQUEST')
+		t.is(err.message, 'Bad Request')
 		t.is(err.status, 400)
 		t.is(err.statusCode, 400)
 		t.is(err.code, 400)
@@ -148,7 +148,7 @@ test('fetchit error 400 text', async (t: any) => {
 	}
 })
 
-test('fetchit error 500', async (t: any) => {
+test('fetchit error 500', async t => {
 	try {
 		await fetchit('https://httpbin.org/status/500')
 	} catch (err) {

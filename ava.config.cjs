@@ -1,7 +1,6 @@
 module.exports = {
 	require: [],
-	files: ['test/*.ts'],
-	extensions: ['ts', '.ts'],
+	files: ['test/*.js'],
 	verbose: true,
 	timeout: '60s',
 }

@@ -1,7 +1,8 @@
-import { ParsedUrlQueryInput } from 'querystring'
-import { QueryString } from '../types/querystring'
-
-function stringifyWithURLSearchParams(object: ParsedUrlQueryInput) {
+/**
+ * @param {import('querystring').ParsedUrlQueryInput} object
+ * @returns
+ */
+function stringifyWithURLSearchParams(object) {
 	const params = new URLSearchParams()
 
 	for (const key in object) {
@@ -25,8 +26,13 @@ function stringifyWithURLSearchParams(object: ParsedUrlQueryInput) {
 	return params.toString()
 }
 
-export const qs: QueryString = {
-	stringify(object: ParsedUrlQueryInput): string {
+/** @type {import('../types/querystring').QueryString} */
+export const qs = {
+	/**
+	 * @param {import('querystring').ParsedUrlQueryInput} object
+	 * @returns {string}
+	 */
+	stringify(object) {
 		if (!object) {
 			return ''
 		}

@@ -1,7 +1,7 @@
-import { StatusCodeError } from '../src/shared/StatusCodeError'
 import test from 'ava'
+import { StatusCodeError } from '../src/shared/StatusCodeError.js'
 
-test('status', (t: any) => {
+test('status', t => {
 	const error = new StatusCodeError(500)
 	t.is(error.message, '500')
 	t.is(error.status, 500)
@@ -9,18 +9,18 @@ test('status', (t: any) => {
 	t.is(error.statusCode, 500)
 })
 
-test('custom message', (t: any) => {
+test('custom message', t => {
 	const error = new StatusCodeError(500, 'Internal Server Error')
 	t.is(error.message, 'Internal Server Error')
 	t.is(error.status, 500)
 })
 
-test('name', (t: any) => {
+test('name', t => {
 	const error = new StatusCodeError(500)
 	t.is(error.name, 'StatusCodeError')
 })
 
-test('instanceof', (t: any) => {
+test('instanceof', t => {
 	const error = new StatusCodeError(500)
 	t.true(error instanceof StatusCodeError)
 	t.true(error instanceof Error)
