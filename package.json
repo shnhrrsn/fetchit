@@ -47,11 +47,6 @@
     "release:beta": "standard-version --prerelease beta",
     "test": "ava"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
@@ -62,7 +57,6 @@
     "@types/node-fetch3": "npm:@types/node-fetch@^2.6.1",
     "@ungap/url-search-params": "^0.2.2",
     "ava": "^4.2.0",
-    "cz-conventional-changelog": "^3.3.0",
     "execa": "^6.1.0",
     "globby": "^13.1.1",
     "husky": "^7.0.4",
