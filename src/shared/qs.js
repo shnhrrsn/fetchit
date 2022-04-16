@@ -7,6 +7,8 @@ export const qs = {
 	stringify(object) {
 		if (!object) {
 			return ''
+		} else if (object instanceof URLSearchParams) {
+			return object.toString()
 		}
 
 		const params = new URLSearchParams()
