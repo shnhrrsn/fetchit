@@ -3,7 +3,7 @@ const { text } = require('../shared/text.cjs')
 
 const $fetchit = import('../modules.js').then(modules => {
 	modules.setFetch(Promise.resolve(window.fetch.bind(window)))
-	modules.setQueryString(import('../browser/qs.js').then(({ qs }) => qs))
+	modules.setQueryString(import('../shared/qs.js').then(({ qs }) => qs))
 	return import('../fetchit.js')
 })
 

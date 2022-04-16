@@ -1,8 +1,9 @@
-import qs from 'querystring'
+import fetch from 'node-fetch'
 import { fetchit } from './fetchit.js'
 import { setFetch, setQueryString } from './modules.js'
+import { qs } from './shared/qs.js'
 
-setFetch(import('node-fetch').then(fetch => /** @type {*} */ (fetch.default || fetch)))
+setFetch(Promise.resolve(/** @type {*} */ (fetch)))
 setQueryString(Promise.resolve(qs))
 
 export * from './shared/json.cjs'

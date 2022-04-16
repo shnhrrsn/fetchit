@@ -1,6 +1,6 @@
 import test from 'ava'
 import querystring from 'querystring'
-import { qs } from '../src/browser/qs.js'
+import { qs } from '../src/shared/qs.js'
 
 const query = {
 	date: Date.now().toString(),

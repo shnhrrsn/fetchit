@@ -1,6 +1,6 @@
-import { qs } from './browser/qs.js'
 import { fetchit } from './fetchit.js'
 import { setFetch, setQueryString } from './modules.js'
+import { qs } from './shared/qs.js'
 
 setFetch(Promise.resolve(window.fetch.bind(window)))
 setQueryString(Promise.resolve(qs))
