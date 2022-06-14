@@ -43,6 +43,7 @@
   },
   "main": "./src/cjs/node.cjs",
   "browser": "./src/cjs/browser.cjs",
+  "types": "./types/cjs/node.d.ts",
   "scripts": {
     "build": "tsc -p jsconfig.json --noEmit",
     "prepack": "yarn build",
