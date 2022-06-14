@@ -10,8 +10,8 @@
   "author": "Shaun Harrison (@shnhrrsn)",
   "type": "module",
   "exports": {
-    ".": {
-      "default": {
+    ".": [
+      {
         "require": {
           "path": "./src/cjs/node.cjs",
           "types": "./types/cjs/node.d.ts"
@@ -19,23 +19,27 @@
         "import": {
           "path": "./src/node.js",
           "types": "./types/node.d.ts"
+        },
+        "browser": {
+          "require": {
+            "path": "./src/cjs/browser.cjs",
+            "types": "./types/cjs/browser.d.ts"
+          },
+          "import": {
+            "path": "./src/browser.js",
+            "types": "./types/browser.d.ts"
+          }
         }
       },
-      "browser": {
-        "require": {
-          "path": "./src/cjs/browser.cjs",
-          "types": "./types/cjs/browser.d.ts"
-        },
-        "import": {
-          "path": "./src/browser.js",
-          "types": "./types/browser.d.ts"
-        }
-      }
-    },
-    "./StatusCodeError": {
-      "import": "./src/shared/StatusCodeError.js",
-      "types": "./types/shared/StatusCodeError.d.ts"
-    }
+      "./src/node.js"
+    ],
+    "./StatusCodeError": [
+      {
+        "import": "./src/shared/StatusCodeError.js",
+        "types": "./types/shared/StatusCodeError.d.ts"
+      },
+      "./src/shared/StatusCodeError.js"
+    ]
   },
   "main": "./src/cjs/node.cjs",
   "browser": "./src/cjs/browser.cjs",
