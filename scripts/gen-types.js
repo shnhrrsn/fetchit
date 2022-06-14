@@ -21,8 +21,12 @@ await execa('yarn', [
 	'types',
 ])
 
-// Symlink src/types
-await fs.symlink('../src/types/', new URL('types', types))
+// Copy src/types
+await execa('cp', [
+	'-R',
+	fileURLToPath(new URL('../src/types', types)),
+	fileURLToPath(new URL('./types', types)),
+])
 
 // Rename all .d.cts files to .d.ts
 for (const file of await globby('**/*.cts', { cwd: fileURLToPath(types) })) {
