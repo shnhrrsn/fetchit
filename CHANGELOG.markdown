@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0-beta.4](https://github.com/shnhrrsn/fetchit/compare/v3.0.0-beta.3...v3.0.0-beta.4) (2022-06-14)
+
+
+### 🧪 Refactors
+
+* **node:** stop using deprecated querystring module ([2dc8c0a](https://github.com/shnhrrsn/fetchit/commit/2dc8c0a1628f09c4c751ad3f920dd083d32ac282))
+
+
+### ✨ Features
+
+* support `URLSearchParams` for `query` and `form` ([e0d44a1](https://github.com/shnhrrsn/fetchit/commit/e0d44a108e3217ffe41c8e1e350d6596ca6680ee))
+
 ## 3.0.0-beta.3 (2022-04-16)
 
 
