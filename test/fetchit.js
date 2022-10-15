@@ -122,6 +122,20 @@ test('fetchit error 400 json', async t => {
 	}
 })
 
+test('fetchit error 400 invalid json', async t => {
+	try {
+		await fetchit.json('https://httpbin.org/status/400')
+	} catch (err) {
+		t.is(err.message, 'BAD REQUEST')
+		t.is(err.status, 400)
+		t.is(err.statusCode, 400)
+		t.is(err.code, 400)
+		t.is(typeof err.response, 'object')
+		t.is(err.name, 'StatusCodeError')
+		t.is(err.json, undefined)
+	}
+})
+
 test('fetchit error 400 text', async t => {
 	try {
 		await fetchit.text('http://mockbin.org/status/400/BAD+REQUEST')

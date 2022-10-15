@@ -9,16 +9,15 @@ function json(response) {
 				return Promise.reject(error)
 			}
 
-			try {
-				return error.response.json().then(
+			return error.response
+				.json()
+				.catch(/** @param {*} err2 */ err2 => Promise.reject(error))
+				.then(
 					/** @param {*} json */ json => {
 						error.json = json
 						return Promise.reject(error)
 					},
 				)
-			} catch (err2) {
-				return Promise.reject(error)
-			}
 		})
 		.then(response => response.json())
 }
