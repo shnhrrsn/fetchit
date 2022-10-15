@@ -174,3 +174,17 @@ test('fetchit error 500', async t => {
 		t.is(err.name, 'StatusCodeError')
 	}
 })
+
+test('fetchit error bad host json', async t => {
+	try {
+		await fetchit.json('https://thisis.notarealdomain/')
+	} catch (err) {
+		t.true(err.message.includes('ENOTFOUND'))
+		t.is(err.status, undefined)
+		t.is(err.statusCode, undefined)
+		t.is(err.code, 'ENOTFOUND')
+		t.is(err.response, undefined)
+		t.is(err.name, 'FetchError')
+		t.is(err.json, undefined)
+	}
+})
