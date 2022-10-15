@@ -1,5 +1,6 @@
 import test from 'ava'
 import { FormData } from 'formdata-node'
+import { Headers } from 'node-fetch'
 import fetchit from '../src/node.js'
 
 test('fetchit json', async t => {
@@ -38,6 +39,7 @@ test('fetchit post json', async t => {
 	})
 
 	t.deepEqual(result.json, body)
+	t.deepEqual(result.headers['Content-Type'], 'application/json')
 })
 
 test('fetchit post json with header array', async t => {
@@ -52,7 +54,45 @@ test('fetchit post json with header array', async t => {
 	})
 
 	t.deepEqual(result.json, body)
+	t.deepEqual(result.headers['Content-Type'], 'application/json')
 	t.deepEqual(result.headers['X-Fetchit'], 'fetchit')
+})
+
+test('fetchit post json with header object', async t => {
+	const body = {
+		string: 'string',
+	}
+
+	const headers = new Headers()
+	headers.set('x-fetchit', 'fetchit')
+
+	const result = await fetchit.json('https://httpbin.org/post', {
+		method: 'POST',
+		body: body,
+		headers: headers,
+	})
+
+	t.deepEqual(result.json, body)
+	t.deepEqual(result.headers['Content-Type'], 'application/json')
+	t.deepEqual(result.headers['X-Fetchit'], 'fetchit')
+})
+
+test('fetchit post json with header object and custom content type', async t => {
+	const body = {
+		string: 'string',
+	}
+
+	const headers = new Headers()
+	headers.set('content-type', 'application/json; charset=utf-8; fetchit=fetchit')
+
+	const result = await fetchit.json('https://httpbin.org/post', {
+		method: 'POST',
+		body: JSON.stringify(body),
+		headers: headers,
+	})
+
+	t.deepEqual(result.json, body)
+	t.deepEqual(result.headers['Content-Type'], 'application/json; charset=utf-8; fetchit=fetchit')
 })
 
 test('fetchit post json content type override', async t => {

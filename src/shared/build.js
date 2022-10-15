@@ -70,8 +70,13 @@ function buildBody(qs, options) {
 function addHeader(options, key, value) {
 	if (Array.isArray(options.headers)) {
 		options.headers.push([key, value])
-	} else if (typeof Headers === 'function' && options.headers instanceof Headers) {
-		options.headers.set(key, value)
+	} else if (
+		!!options.headers &&
+		!!options.headers.constructor &&
+		options.headers.constructor.name === 'Headers'
+	) {
+		const headers = /** @type {Headers} */ (options.headers)
+		headers.set(key, value)
 	} else {
 		if (!options.headers) {
 			options.headers = {}
@@ -93,8 +98,12 @@ function hasHeader(options, key) {
 	} else if (Array.isArray(options.headers)) {
 		key = key.toUpperCase()
 		return options.headers.filter(([otherKey]) => otherKey.toUpperCase() === key).length > 0
-	} else if (typeof Headers === 'function' && options.headers instanceof Headers) {
-		return options.headers.has(key)
+	} else if (
+		!!options.headers &&
+		!!options.headers.constructor &&
+		options.headers.constructor.name === 'Headers'
+	) {
+		return /** @type {Headers} */ (options.headers).has(key)
 	}
 
 	return key in options.headers ? true : false
