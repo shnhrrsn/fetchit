@@ -9,16 +9,15 @@ function text(response) {
 				return Promise.reject(err)
 			}
 
-			try {
-				return err.response.text().then(
+			return err.response
+				.text()
+				.catch(/** @param {*} err2 */ err2 => Promise.reject(err))
+				.then(
 					/** @param {*} text */ text => {
 						err.text = text
 						return Promise.reject(err)
 					},
 				)
-			} catch (err2) {
-				return Promise.reject(err)
-			}
 		})
 		.then(function (response) {
 			return response.text()
