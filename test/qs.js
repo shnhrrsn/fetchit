@@ -10,11 +10,32 @@ const query = {
 	zero: 0,
 	string: 'string',
 	array: ['a', 'b', 'c'],
+	null: null,
+	undefined: undefined,
+	zero_string: '0',
+	blank_string: '',
 }
 
-test('with URLSearchParams', async t => {
+test.beforeEach(async t => {
 	global.URLSearchParams = /** @type {*} */ (
 		await import('@ungap/url-search-params').then(mod => mod.default)
 	)
+})
+
+test.afterEach(t => {
+	delete global.URLSearchParams
+})
+
+test('with URLSearchParams', async t => {
 	t.is(querystring.stringify(query), qs.stringify(query))
+})
+
+test('undefined', t => {
+	t.is(qs.stringify(undefined), '')
+})
+
+test('URLSearchParams', t => {
+	const params = new URLSearchParams()
+	params.set('a', 'b')
+	t.is(qs.stringify(params), params.toString())
 })
