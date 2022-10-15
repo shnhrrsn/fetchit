@@ -39,6 +39,13 @@
         "types": "./types/shared/StatusCodeError.d.ts"
       },
       "./src/shared/StatusCodeError.js"
+    ],
+    "./modules": [
+      {
+        "import": "./src/modules.js",
+        "types": "./types/modules.d.ts"
+      },
+      "./src/modules.js"
     ]
   },
   "main": "./src/cjs/node.cjs",
