@@ -22,6 +22,7 @@ test('fetchit text', async t => {
 test('fetchit error 400', async t => {
 	try {
 		await fetchit('https://httpbin.org/status/400')
+		t.fail('expected error')
 	} catch (err) {
 		t.is(err.message, 'BAD REQUEST')
 		t.is(err.status, 400)

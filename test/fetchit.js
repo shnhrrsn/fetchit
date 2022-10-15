@@ -148,6 +148,7 @@ test('fetchit post text', async t => {
 test('fetchit error 400', async t => {
 	try {
 		await fetchit('https://httpbin.org/status/400')
+		t.fail('expected error')
 	} catch (err) {
 		t.is(err.message, 'BAD REQUEST')
 		t.is(err.status, 400)
@@ -162,6 +163,7 @@ test('fetchit error 400', async t => {
 test('fetchit error 400 json', async t => {
 	try {
 		await fetchit.json('http://mockbin.org/status/400/BAD+REQUEST')
+		t.fail('expected error')
 	} catch (err) {
 		t.is(err.message, 'Bad Request')
 		t.is(err.status, 400)
@@ -181,6 +183,7 @@ test('fetchit error 400 json', async t => {
 test('fetchit error 400 invalid json', async t => {
 	try {
 		await fetchit.json('https://httpbin.org/status/400')
+		t.fail('expected error')
 	} catch (err) {
 		t.is(err.message, 'BAD REQUEST')
 		t.is(err.status, 400)
@@ -195,6 +198,7 @@ test('fetchit error 400 invalid json', async t => {
 test('fetchit error 400 text', async t => {
 	try {
 		await fetchit.text('http://mockbin.org/status/400/BAD+REQUEST')
+		t.fail('expected error')
 	} catch (err) {
 		t.is(err.message, 'Bad Request')
 		t.is(err.status, 400)
@@ -221,6 +225,7 @@ test('fetchit error 400 text', async t => {
 test('fetchit error 500', async t => {
 	try {
 		await fetchit('https://httpbin.org/status/500')
+		t.fail('expected error')
 	} catch (err) {
 		t.is(err.message, 'INTERNAL SERVER ERROR')
 		t.is(err.status, 500)
@@ -234,6 +239,7 @@ test('fetchit error 500', async t => {
 test('fetchit error bad host json', async t => {
 	try {
 		await fetchit.json('https://thisis.notarealdomain/')
+		t.fail('expected error')
 	} catch (err) {
 		t.true(err.message.includes('ENOTFOUND'))
 		t.is(err.status, undefined)
@@ -248,6 +254,7 @@ test('fetchit error bad host json', async t => {
 test('fetchit error bad host text', async t => {
 	try {
 		await fetchit.text('https://thisis.notarealdomain/')
+		t.fail('expected error')
 	} catch (err) {
 		t.true(err.message.includes('ENOTFOUND'))
 		t.is(err.status, undefined)
