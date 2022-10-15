@@ -2,70 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [3.0.0-beta.7](https://github.com/shnhrrsn/fetchit/compare/v3.0.0-beta.6...v3.0.0-beta.7) (2022-10-15)
-
-
-### 🐛 Bug Fixes
-
-* don’t clobber error when error json is invalid ([f9568a9](https://github.com/shnhrrsn/fetchit/commit/f9568a990cace8f0497d6c91769e4135a70265d7))
-* don’t clobber error when error text is invalid ([50de862](https://github.com/shnhrrsn/fetchit/commit/50de8621e26be7a5bbd4f2939c1540b736fd533a))
-* non-global Headers detection ([76342a4](https://github.com/shnhrrsn/fetchit/commit/76342a4d38dfaf31c029bca5eca8ea549762b712))
-
-## [3.0.0-beta.6](https://github.com/shnhrrsn/fetchit/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2022-06-14)
-
-## [3.0.0-beta.5](https://github.com/shnhrrsn/fetchit/compare/v3.0.0-beta.4...v3.0.0-beta.5) (2022-06-14)
-
-## [3.0.0-beta.4](https://github.com/shnhrrsn/fetchit/compare/v3.0.0-beta.3...v3.0.0-beta.4) (2022-06-14)
-
-
-### 🧪 Refactors
-
-* **node:** stop using deprecated querystring module ([2dc8c0a](https://github.com/shnhrrsn/fetchit/commit/2dc8c0a1628f09c4c751ad3f920dd083d32ac282))
-
+## [3.0.0](https://github.com/shnhrrsn/fetchit/compare/2.1.0...v3.0.0) (2022-10-15)
 
 ### ✨ Features
 
-* support `URLSearchParams` for `query` and `form` ([e0d44a1](https://github.com/shnhrrsn/fetchit/commit/e0d44a108e3217ffe41c8e1e350d6596ca6680ee))
+- add support for cjs alongside esm ([49e600f](https://github.com/shnhrrsn/fetchit/commit/49e600ff4cdfd8211e797c12c39629f7635da46d))
+- support `URLSearchParams` for `query` and `form` ([e0d44a1](https://github.com/shnhrrsn/fetchit/commit/e0d44a108e3217ffe41c8e1e350d6596ca6680ee))
+- **browser:** remove URLSearchParams fallback ([c2b6e97](https://github.com/shnhrrsn/fetchit/commit/c2b6e97548803a65b8389ee655e5318f75b12b64))
+- add functional access for json/text ([61f921b](https://github.com/shnhrrsn/fetchit/commit/61f921bb2c73208542731abab1d4d63f769ac2ba))
 
-## 3.0.0-beta.3 (2022-04-16)
+### 🐛 Bug Fixes
 
+- don’t clobber error when error json is invalid ([f9568a9](https://github.com/shnhrrsn/fetchit/commit/f9568a990cace8f0497d6c91769e4135a70265d7))
+- don’t clobber error when error text is invalid ([50de862](https://github.com/shnhrrsn/fetchit/commit/50de8621e26be7a5bbd4f2939c1540b736fd533a))
+- non-global Headers detection ([76342a4](https://github.com/shnhrrsn/fetchit/commit/76342a4d38dfaf31c029bca5eca8ea549762b712))
+
+### 🧪 Refactors
+
+- **node:** stop using deprecated querystring module ([2dc8c0a](https://github.com/shnhrrsn/fetchit/commit/2dc8c0a1628f09c4c751ad3f920dd083d32ac282))
 
 ### ⚠ BREAKING CHANGES
 
-* **browser:** fetchit will no longer work in older browsers that don’t support URLSearchParams
-* fetchit-async has been removed
-
-### ✨ Features
-
-* **browser:** remove URLSearchParams fallback ([c2b6e97](https://github.com/shnhrrsn/fetchit/commit/c2b6e97548803a65b8389ee655e5318f75b12b64))
-* add functional access for json/text ([61f921b](https://github.com/shnhrrsn/fetchit/commit/61f921bb2c73208542731abab1d4d63f769ac2ba))
-
-
-### 🧪 Refactors
-
-* add support for cjs alongside esm ([49e600f](https://github.com/shnhrrsn/fetchit/commit/49e600ff4cdfd8211e797c12c39629f7635da46d))
-* convert to esm+jsconfig ([a365335](https://github.com/shnhrrsn/fetchit/commit/a36533532a2eac93153c8c71c83494d0ccd23197))
-* typescript rewrite ([d2b55bf](https://github.com/shnhrrsn/fetchit/commit/d2b55bfa81ad9f71d6addfb8fdb6e3259b3ceaed))
-
-
-### 🐛 Bug Fixes
-
-* remove null coalescing for node 12 ([dc7587f](https://github.com/shnhrrsn/fetchit/commit/dc7587fa047f90d43bb9a18bec7440957d04d676))
-
-# [3.0.0-beta.2](https://github.com/shnhrrsn/fetchit/compare/2.1.0...v3.0.0-beta.2) (2021-04-14)
-
-### ✨ Features
-
-- add functional access for json/text ([61f921b](https://github.com/shnhrrsn/fetchit/commit/61f921bb2c73208542731abab1d4d63f769ac2ba))
-
-# [3.0.0-beta.1](https://github.com/shnhrrsn/fetchit/compare/2.1.0...3.0.0-beta.1) (2020-08-18)
-
-### 🧪 Refactors
-
-- typescript rewrite ([d2b55bf](https://github.com/shnhrrsn/fetchit/commit/d2b55bfa81ad9f71d6addfb8fdb6e3259b3ceaed))
-
-### BREAKING CHANGES
-
+- **browser:** fetchit will no longer work in older browsers that don’t support URLSearchParams
 - fetchit-async has been removed
 
 # [2.1.0](https://github.com/shnhrrsn/fetchit/compare/2.0.0...2.1.0) (2018-12-05)
