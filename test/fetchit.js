@@ -1,4 +1,5 @@
 import test from 'ava'
+import { FormData } from 'formdata-node'
 import fetchit from '../src/node.js'
 
 test('fetchit json', async t => {
@@ -216,5 +217,21 @@ test('fetchit append query string', async t => {
 		a: 'b',
 		c: 'd',
 		e: 'f',
+	})
+})
+
+test('fetchit post FormData', async t => {
+	const form = new FormData()
+	form.append('a', 'b')
+	form.append('c', 'd')
+
+	const result = await fetchit.json('https://httpbin.org/post', {
+		method: 'POST',
+		body: form,
+	})
+
+	t.deepEqual(result.form, {
+		a: 'b',
+		c: 'd',
 	})
 })
