@@ -202,3 +202,19 @@ test('fetchit error bad host text', async t => {
 		t.is(err.text, undefined)
 	}
 })
+
+test('fetchit append query string', async t => {
+	const result = await fetchit.json('https://httpbin.org/get?a=b&c=d', {
+		query: {
+			e: 'f',
+		},
+	})
+
+	t.is(typeof result, 'object')
+	t.is(typeof result.args, 'object')
+	t.deepEqual(result.args, {
+		a: 'b',
+		c: 'd',
+		e: 'f',
+	})
+})
