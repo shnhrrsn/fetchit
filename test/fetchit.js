@@ -40,6 +40,21 @@ test('fetchit post json', async t => {
 	t.deepEqual(result.json, body)
 })
 
+test('fetchit post json with header array', async t => {
+	const body = {
+		string: 'string',
+	}
+
+	const result = await fetchit.json('https://httpbin.org/post', {
+		method: 'POST',
+		body: body,
+		headers: [['x-fetchit', 'fetchit']],
+	})
+
+	t.deepEqual(result.json, body)
+	t.deepEqual(result.headers['X-Fetchit'], 'fetchit')
+})
+
 test('fetchit post json content type override', async t => {
 	const body = {
 		date: Date.now(),
