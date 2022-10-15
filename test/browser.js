@@ -1,12 +1,15 @@
 import test from 'ava'
 
-// @ts-ignore
-global.window = {
-	// @ts-ignore
-	fetch: await import('node-fetch2').then(fetch => fetch.default),
-}
+/** @type {import('./types/fetchit').FetchIt} */
+let fetchit = undefined
 
-const { fetchit } = await import('../src/browser.js')
+test.before(async () => {
+	global.window = {
+		// @ts-ignore
+		fetch: await import('node-fetch2').then(fetch => fetch.default),
+	}
+	;({ fetchit } = await import('../src/browser.js'))
+})
 
 test('fetchit json', async t => {
 	const result = await fetchit.json('https://httpbin.org/anything')
