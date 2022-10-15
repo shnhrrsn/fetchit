@@ -78,6 +78,7 @@ function addHeader(options, key, value) {
 		const headers = /** @type {Headers} */ (options.headers)
 		headers.set(key, value)
 	} else {
+		/* c8 ignore next 3 */
 		if (!options.headers) {
 			options.headers = {}
 		}
@@ -93,6 +94,7 @@ function addHeader(options, key, value) {
  * @returns {boolean}
  */
 function hasHeader(options, key) {
+	/* c8 ignore next 2 */
 	if (!options.headers) {
 		return false
 	} else if (Array.isArray(options.headers)) {
