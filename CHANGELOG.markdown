@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0-beta.7](https://github.com/shnhrrsn/fetchit/compare/v3.0.0-beta.6...v3.0.0-beta.7) (2022-10-15)
+
+
+### 🐛 Bug Fixes
+
+* don’t clobber error when error json is invalid ([f9568a9](https://github.com/shnhrrsn/fetchit/commit/f9568a990cace8f0497d6c91769e4135a70265d7))
+* don’t clobber error when error text is invalid ([50de862](https://github.com/shnhrrsn/fetchit/commit/50de8621e26be7a5bbd4f2939c1540b736fd533a))
+* non-global Headers detection ([76342a4](https://github.com/shnhrrsn/fetchit/commit/76342a4d38dfaf31c029bca5eca8ea549762b712))
+
 ## [3.0.0-beta.6](https://github.com/shnhrrsn/fetchit/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2022-06-14)
 
 ## [3.0.0-beta.5](https://github.com/shnhrrsn/fetchit/compare/v3.0.0-beta.4...v3.0.0-beta.5) (2022-06-14)
