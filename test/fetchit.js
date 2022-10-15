@@ -188,3 +188,17 @@ test('fetchit error bad host json', async t => {
 		t.is(err.json, undefined)
 	}
 })
+
+test('fetchit error bad host text', async t => {
+	try {
+		await fetchit.text('https://thisis.notarealdomain/')
+	} catch (err) {
+		t.true(err.message.includes('ENOTFOUND'))
+		t.is(err.status, undefined)
+		t.is(err.statusCode, undefined)
+		t.is(err.code, 'ENOTFOUND')
+		t.is(err.response, undefined)
+		t.is(err.name, 'FetchError')
+		t.is(err.text, undefined)
+	}
+})
