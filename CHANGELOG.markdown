@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0-beta.0](https://github.com/shnhrrsn/fetchit/compare/v3.0.0...v3.1.0-beta.0) (2023-01-21)
+
+
+### 🧪 Refactors
+
+* upgrade to typescript 4.9 ([d4236a3](https://github.com/shnhrrsn/fetchit/commit/d4236a3fea1013931c60573d5d6bb1b854ba197c))
+
 ## [3.0.0](https://github.com/shnhrrsn/fetchit/compare/2.1.0...v3.0.0) (2022-10-15)
 
 ### ✨ Features
