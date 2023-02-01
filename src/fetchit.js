@@ -1,6 +1,6 @@
+import { StatusCodeError } from './errors.js'
 import { build } from './utils/build.js'
 import { json } from './utils/json.cjs'
-import { StatusCodeError } from './errors.js'
 import { text } from './utils/text.cjs'
 
 /**
