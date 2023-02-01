@@ -4,7 +4,26 @@ import { json } from './shared/json.cjs'
 import { StatusCodeError } from './shared/StatusCodeError.js'
 import { text } from './shared/text.cjs'
 
-/** @type {import('./types/fetchit').FetchIt} */
+/**
+ * @typedef {{ (url: RequestInfo, init?: RequestInit): Promise<Response> }} fetchfunc
+
+* @typedef {{
+ * 	(uri: string, options?: FetchitRequestInit): Promise<Response>
+ * 	json(uri: string, options?: FetchitRequestInit): Promise<any>
+ * 	text(uri: string, options?: FetchitRequestInit): Promise<string>
+ * }} FetchIt
+ *
+ * @typedef {RequestInit & {
+ * 	query?: QueryStringInput
+ * 	form?: QueryStringInput
+ * 	body?: any
+ * }} FetchitRequestInit
+ *
+ * @typedef {URLSearchParams | Record<string, string | number | boolean | ReadonlyArray<string> | ReadonlyArray<number> | ReadonlyArray<boolean> | null>} QueryStringInput
+ * @typedef {{ stringify(obj?: QueryStringInput): string }} QueryString
+ */
+
+/** @type {FetchIt} */
 export const fetchit = async function fetchit(uri, options = undefined) {
 	try {
 		const [fetch, qs] = await Promise.all([getFetch(), getQueryString()])

@@ -1,7 +1,7 @@
-/** @type {import('../types/querystring').QueryString} */
+/** @type {import('../fetchit.js').QueryString} */
 export const qs = {
 	/**
-	 * @param {import('../types/querystring').QueryStringInput} object
+	 * @param {import('../fetchit.js').QueryStringInput} object
 	 * @returns {string}
 	 */
 	stringify(object) {

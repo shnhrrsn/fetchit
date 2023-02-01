@@ -7,7 +7,7 @@ const $fetchit = import('../modules.js').then(modules => {
 	return import('../fetchit.js')
 })
 
-/** @type {import('../types/fetchit').FetchIt} */
+/** @type {import('../fetchit.js').FetchIt} */
 const fetchit = function fetchit(uri, options = undefined) {
 	return $fetchit.then(({ fetchit }) => fetchit(uri, options))
 }

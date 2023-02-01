@@ -13,7 +13,8 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2020"
+    "target": "es2020",
+    "types": ["node"]
   },
   "include": ["./src/**/*.js", "./src/**/*.cjs"]
 }

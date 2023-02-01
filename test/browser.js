@@ -1,6 +1,6 @@
 import test from 'ava'
 
-/** @type {import('./types/fetchit').FetchIt} */
+/** @type {import('../src/fetchit.js').FetchIt} */
 let fetchit = undefined
 
 test.before(async () => {

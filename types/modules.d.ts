@@ -1,16 +1,16 @@
 /**
- * @returns {Promise<import('./types/fetch').fetchfunc>}
+ * @returns {Promise<import('./fetchit.js').fetchfunc>}
  */
-export function getFetch(): Promise<import('./types/fetch').fetchfunc>;
+export function getFetch(): Promise<import('./fetchit.js').fetchfunc>;
 /**
- * @param {Promise<import('./types/fetch').fetchfunc>} fetch
+ * @param {Promise<import('./fetchit.js').fetchfunc>} fetch
  */
-export function setFetch(fetch: Promise<import('./types/fetch').fetchfunc>): void;
+export function setFetch(fetch: Promise<import('./fetchit.js').fetchfunc>): void;
 /**
- * @returns {Promise<import('./types/querystring').QueryString>}
+ * @returns {Promise<import('./fetchit.js').QueryString>}
  */
-export function getQueryString(): Promise<import('./types/querystring').QueryString>;
+export function getQueryString(): Promise<import('./fetchit.js').QueryString>;
 /**
- * @param {Promise<import('./types/querystring').QueryString>} qs
+ * @param {Promise<import('./fetchit.js').QueryString>} qs
  */
-export function setQueryString(qs: Promise<import('./types/querystring').QueryString>): void;
+export function setQueryString(qs: Promise<import('./fetchit.js').QueryString>): void;

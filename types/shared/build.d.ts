@@ -1,7 +1,7 @@
 /**
- * @param {import('../types/querystring').QueryString} qs
+ * @param {import('../fetchit.js').QueryString} qs
  * @param {string} uri
- * @param {import('../types/fetchit').FetchitRequestInit} options
- * @returns {[string, import('../types/fetchit').FetchitRequestInit]}
+ * @param {import('../fetchit.js').FetchitRequestInit} options
+ * @returns {[string, import('../fetchit.js').FetchitRequestInit]}
  */
-export function build(qs: import('../types/querystring').QueryString, uri: string, options: import('../types/fetchit').FetchitRequestInit): [string, import('../types/fetchit').FetchitRequestInit];
+export function build(qs: import('../fetchit.js').QueryString, uri: string, options: import('../fetchit.js').FetchitRequestInit): [string, import('../fetchit.js').FetchitRequestInit];

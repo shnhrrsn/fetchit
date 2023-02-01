@@ -1,8 +1,8 @@
 /**
- * @param {import('../types/querystring').QueryString} qs
+ * @param {import('../fetchit.js').QueryString} qs
  * @param {string} uri
- * @param {import('../types/fetchit').FetchitRequestInit} options
- * @returns {[string, import('../types/fetchit').FetchitRequestInit]}
+ * @param {import('../fetchit.js').FetchitRequestInit} options
+ * @returns {[string, import('../fetchit.js').FetchitRequestInit]}
  */
 export function build(qs, uri, options) {
 	if (!options.credentials) {
@@ -35,8 +35,8 @@ export function build(qs, uri, options) {
 
 /**
  *
- * @param {import('../types/querystring').QueryString} qs
- * @param {import('../types/fetchit').FetchitRequestInit} options
+ * @param {import('../fetchit.js').QueryString} qs
+ * @param {import('../fetchit.js').FetchitRequestInit} options
  * @returns
  */
 function buildBody(qs, options) {
@@ -63,7 +63,7 @@ function buildBody(qs, options) {
 }
 
 /**
- * @param {import('../types/fetchit').FetchitRequestInit} options
+ * @param {import('../fetchit.js').FetchitRequestInit} options
  * @param {string} key
  * @param {string} value
  */
@@ -89,7 +89,7 @@ function addHeader(options, key, value) {
 }
 
 /**
- * @param {import('../types/fetchit').FetchitRequestInit} options
+ * @param {import('../fetchit.js').FetchitRequestInit} options
  * @param {string} key
  * @returns {boolean}
  */

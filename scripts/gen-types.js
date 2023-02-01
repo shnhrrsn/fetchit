@@ -18,10 +18,3 @@ await execa('yarn', [
 	'--outDir',
 	'types',
 ])
-
-// Copy src/types
-await execa('cp', [
-	'-R',
-	fileURLToPath(new URL('../src/types', types)),
-	fileURLToPath(new URL('./types', types)),
-])
