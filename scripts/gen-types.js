@@ -1,6 +1,8 @@
-import { execa } from 'execa'
-import { fileURLToPath } from 'url'
+import { fileURLToPath } from 'node:url'
+import { execFile } from 'node:child_process'
+import { promisify } from 'node:util'
 
+const execa = promisify(execFile)
 const types = new URL('../types/', import.meta.url)
 
 // Clear out old types
