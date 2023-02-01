@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0-beta.0](https://github.com/shnhrrsn/fetchit/compare/v3.1.0-beta.0...v4.0.0-beta.0) (2023-02-01)
+
+
+### 🧪 Refactors
+
+* drop support for <node 18 ([1af7e13](https://github.com/shnhrrsn/fetchit/commit/1af7e139dad829359869d6220c7d1bc892a16585))
+* inline all types ([f97881b](https://github.com/shnhrrsn/fetchit/commit/f97881bb88687b4868d3dff79881648f487de6b6))
+
 ## [3.1.0-beta.0](https://github.com/shnhrrsn/fetchit/compare/v3.0.0...v3.1.0-beta.0) (2023-01-21)
 
 
