@@ -9,6 +9,12 @@
 
 `fetchit` provides additional utilities for [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) that works in both Node and the browser.
 
+## Compatibility
+
+fetchit 4 requires Node 18 or later and is no longer compatible with node-fetch.
+
+To use with earlier versions of Node, please use fetchit@^3
+
 ## Installation
 
 ### yarn
