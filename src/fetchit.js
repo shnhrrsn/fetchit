@@ -1,8 +1,7 @@
-import { getFetch, getQueryString } from './modules.js'
-import { build } from './shared/build.js'
-import { json } from './shared/json.cjs'
-import { StatusCodeError } from './shared/StatusCodeError.js'
-import { text } from './shared/text.cjs'
+import { build } from './utils/build.js'
+import { json } from './utils/json.cjs'
+import { StatusCodeError } from './errors.js'
+import { text } from './utils/text.cjs'
 
 /**
  * @typedef {{ (url: RequestInfo, init?: RequestInit): Promise<Response> }} fetchfunc
@@ -26,16 +25,15 @@ import { text } from './shared/text.cjs'
 /** @type {FetchIt} */
 export const fetchit = async function fetchit(uri, options = undefined) {
 	try {
-		const [fetch, qs] = await Promise.all([getFetch(), getQueryString()])
-		options = options || {}
-		;[uri, options] = build(qs, uri, options)
+		options = options ?? {}
+		;[uri, options] = build(uri, options)
 
 		return fetch(uri, options)
 			.then(function (response) {
 				if (!response.ok) {
 					const error = new StatusCodeError(
 						response.status,
-						(response.statusText || response.status || 'Fetch Error').toString(),
+						(response.statusText ?? response.status ?? 'Fetch Error').toString(),
 					)
 					error.response = response
 					throw error
@@ -54,6 +52,8 @@ export const fetchit = async function fetchit(uri, options = undefined) {
 		return Promise.reject(err)
 	}
 }
+
+export default fetchit
 
 fetchit.json = function (...args) {
 	return json(fetchit(...args))

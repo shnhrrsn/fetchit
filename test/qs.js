@@ -1,6 +1,6 @@
 import test from 'ava'
 import querystring from 'querystring'
-import { qs } from '../src/shared/qs.js'
+import { qs } from '../src/utils/qs.js'
 
 const query = {
 	date: Date.now().toString(),
@@ -15,16 +15,6 @@ const query = {
 	zero_string: '0',
 	blank_string: '',
 }
-
-test.beforeEach(async t => {
-	global.URLSearchParams = /** @type {*} */ (
-		await import('@ungap/url-search-params').then(mod => mod.default)
-	)
-})
-
-test.afterEach(t => {
-	delete global.URLSearchParams
-})
 
 test('with URLSearchParams', async t => {
 	t.is(querystring.stringify(query), qs.stringify(query))

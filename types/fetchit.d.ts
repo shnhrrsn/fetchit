@@ -18,6 +18,7 @@
  */
 /** @type {FetchIt} */
 export const fetchit: FetchIt;
+export default fetchit;
 export type fetchfunc = (url: RequestInfo, init?: RequestInit) => Promise<Response>;
 export type FetchIt = {
     (uri: string, options?: FetchitRequestInit): Promise<Response>;
@@ -33,5 +34,5 @@ export type QueryStringInput = URLSearchParams | Record<string, string | number 
 export type QueryString = {
     stringify(obj?: QueryStringInput): string;
 };
-import { json } from "./shared/json.cjs";
-import { text } from "./shared/text.cjs";
+import { json } from "./utils/json.cjs";
+import { text } from "./utils/text.cjs";

@@ -1,5 +1,5 @@
 const { default: test } = require('ava')
-const { default: fetchit } = require('../src/cjs/node.cjs')
+const { default: fetchit } = require('../src/fetchit.cjs')
 
 test('fetchit json', async t => {
 	const result = await fetchit.json('https://httpbin.org/anything')

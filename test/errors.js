@@ -1,5 +1,5 @@
 import test from 'ava'
-import { StatusCodeError } from '../src/shared/StatusCodeError.js'
+import { StatusCodeError } from '../src/errors.js'
 
 test('status', t => {
 	const error = new StatusCodeError(500)

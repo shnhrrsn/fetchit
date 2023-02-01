@@ -1,7 +1,5 @@
 import test from 'ava'
-import { FormData } from 'formdata-node'
-import { Headers } from 'node-fetch'
-import fetchit from '../src/node.js'
+import fetchit from '../src/fetchit.js'
 
 test('fetchit json', async t => {
 	const result = await fetchit.json('https://httpbin.org/anything')
@@ -132,7 +130,7 @@ test('fetchit post form', async t => {
 })
 
 test('fetchit post text', async t => {
-	const body = 'Time time is ${Date.now()}'
+	const body = `Time time is ${Date.now()}`
 
 	const result = await fetchit.json('https://httpbin.org/post', {
 		method: 'POST',
@@ -150,7 +148,7 @@ test('fetchit error 400', async t => {
 		await fetchit('https://httpbin.org/status/400')
 		t.fail('expected error')
 	} catch (err) {
-		t.is(err.message, 'BAD REQUEST')
+		t.is(err.message.toLowerCase(), 'bad request')
 		t.is(err.status, 400)
 		t.is(err.statusCode, 400)
 		t.is(err.code, 400)
@@ -165,7 +163,7 @@ test('fetchit error 400 json', async t => {
 		await fetchit.json('http://mockbin.org/status/400/BAD+REQUEST')
 		t.fail('expected error')
 	} catch (err) {
-		t.is(err.message, 'Bad Request')
+		t.is(err.message.toLowerCase(), 'bad request')
 		t.is(err.status, 400)
 		t.is(err.statusCode, 400)
 		t.is(err.code, 400)
@@ -185,7 +183,7 @@ test('fetchit error 400 invalid json', async t => {
 		await fetchit.json('https://httpbin.org/status/400')
 		t.fail('expected error')
 	} catch (err) {
-		t.is(err.message, 'BAD REQUEST')
+		t.is(err.message.toLowerCase(), 'bad request')
 		t.is(err.status, 400)
 		t.is(err.statusCode, 400)
 		t.is(err.code, 400)
@@ -200,7 +198,7 @@ test('fetchit error 400 text', async t => {
 		await fetchit.text('http://mockbin.org/status/400/BAD+REQUEST')
 		t.fail('expected error')
 	} catch (err) {
-		t.is(err.message, 'Bad Request')
+		t.is(err.message.toLowerCase(), 'bad request')
 		t.is(err.status, 400)
 		t.is(err.statusCode, 400)
 		t.is(err.code, 400)
@@ -241,13 +239,14 @@ test('fetchit error bad host json', async t => {
 		await fetchit.json('https://thisis.notarealdomain/')
 		t.fail('expected error')
 	} catch (err) {
-		t.true(err.message.includes('ENOTFOUND'))
+		t.true(err.message.includes('fetch failed'))
+		t.true(err.cause.message.includes('ENOTFOUND'))
 		t.is(err.status, undefined)
 		t.is(err.statusCode, undefined)
-		t.is(err.code, 'ENOTFOUND')
+		t.is(err.cause.code, 'ENOTFOUND')
 		t.is(err.response, undefined)
-		t.is(err.name, 'FetchError')
-		t.is(err.json, undefined)
+		t.is(err.name, 'TypeError')
+		t.is(err.text, undefined)
 	}
 })
 
@@ -256,12 +255,13 @@ test('fetchit error bad host text', async t => {
 		await fetchit.text('https://thisis.notarealdomain/')
 		t.fail('expected error')
 	} catch (err) {
-		t.true(err.message.includes('ENOTFOUND'))
+		t.true(err.message.includes('fetch failed'))
+		t.true(err.cause.message.includes('ENOTFOUND'))
 		t.is(err.status, undefined)
 		t.is(err.statusCode, undefined)
-		t.is(err.code, 'ENOTFOUND')
+		t.is(err.cause.code, 'ENOTFOUND')
 		t.is(err.response, undefined)
-		t.is(err.name, 'FetchError')
+		t.is(err.name, 'TypeError')
 		t.is(err.text, undefined)
 	}
 })

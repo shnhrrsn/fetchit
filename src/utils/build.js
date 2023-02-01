@@ -1,10 +1,11 @@
+import { qs } from './qs.js'
+
 /**
- * @param {import('../fetchit.js').QueryString} qs
  * @param {string} uri
  * @param {import('../fetchit.js').FetchitRequestInit} options
  * @returns {[string, import('../fetchit.js').FetchitRequestInit]}
  */
-export function build(qs, uri, options) {
+export function build(uri, options) {
 	if (!options.credentials) {
 		options.credentials = 'same-origin'
 	}
