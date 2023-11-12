@@ -5,8 +5,8 @@ import { text } from './utils/text.cjs'
 
 /**
  * @typedef {{ (url: RequestInfo, init?: RequestInit): Promise<Response> }} fetchfunc
-
-* @typedef {{
+ *
+ * @typedef {{
  * 	(uri: string, options?: FetchitRequestInit): Promise<Response>
  * 	json(uri: string, options?: FetchitRequestInit): Promise<any>
  * 	text(uri: string, options?: FetchitRequestInit): Promise<string>
