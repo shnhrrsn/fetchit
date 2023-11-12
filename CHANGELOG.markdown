@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0-beta.1](https://github.com/shnhrrsn/fetchit/compare/v4.0.0-beta.0...v4.0.0-beta.1) (2023-11-12)
+
+
+### 🐛 Bug Fixes
+
+* expose json + text from esm ([44948df](https://github.com/shnhrrsn/fetchit/commit/44948dffc105a0069b616882348969065ef6f7b1))
+
 ## [4.0.0-beta.0](https://github.com/shnhrrsn/fetchit/compare/v3.1.0-beta.0...v4.0.0-beta.0) (2023-02-01)
 
 
