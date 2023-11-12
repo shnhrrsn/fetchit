@@ -158,7 +158,8 @@ test('fetchit error 400', async t => {
 	}
 })
 
-test('fetchit error 400 json', async t => {
+// Mockbin is no longer available, need a replacement endpoint
+test.failing('fetchit error 400 json', async t => {
 	try {
 		await fetchit.json('http://mockbin.org/status/400/BAD+REQUEST')
 		t.fail('expected error')
@@ -193,7 +194,8 @@ test('fetchit error 400 invalid json', async t => {
 	}
 })
 
-test('fetchit error 400 text', async t => {
+// Mockbin is no longer available, need a replacement endpoint
+test.failing('fetchit error 400 text', async t => {
 	try {
 		await fetchit.text('http://mockbin.org/status/400/BAD+REQUEST')
 		t.fail('expected error')
