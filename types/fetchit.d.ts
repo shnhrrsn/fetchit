@@ -36,3 +36,4 @@ export type QueryString = {
 };
 import { json } from "./utils/json.cjs";
 import { text } from "./utils/text.cjs";
+export { json, text };

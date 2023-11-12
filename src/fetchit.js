@@ -54,6 +54,7 @@ export const fetchit = async function fetchit(uri, options = undefined) {
 }
 
 export default fetchit
+export { json, text }
 
 fetchit.json = function (...args) {
 	return json(fetchit(...args))
